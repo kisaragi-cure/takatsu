@@ -352,13 +352,17 @@ background-color: #ffffff;
 
 <div style="position: absolute; top: 740px; left:1510px; font-size:18pt"><p>上野毛</p></div>
 <div id="ty14-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "ty14-1a" disabled / name="address" size="14" value=""　></div>
-<div id="ty14-1" style="position: absolute; top: 1373px; left:40px; font-size:13pt; "></div>
-<div id="ty14-1b" style="position: absolute; top: 1373px; left:60px; font-size:13pt; "></div>
-<div id="ty14-1c" style="position: absolute; top: 1373px; left:160px; font-size:13pt; color:#FF0000; "></div>
+<div id="ty14-1" style="position: absolute; top: 833px; left:1486px; font-size:13pt; "></div>
+<div id="ty14-1b" style="position: absolute; top: 833px; left:1506px; font-size:13pt; "></div>
+<div id="ty14-1c" style="position: absolute; top: 833px; left:1606px; font-size:13pt; color:#FF0000; "></div>
 <div id="ty14-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "ty14-2a" disabled / name="address" size="14" value=""　></div>
-<div id="ty14-2" style="position: absolute; top: 1413px; left:40px; font-size:13pt; "></div>
-<div id="ty14-2b" style="position: absolute; top: 1413px; left:60px; font-size:13pt; "></div>
-<div id="ty14-2c" style="position: absolute; top: 1413px; left:160px; font-size:13pt; color:#FF0000; "></div>
+<div id="ty14-2" style="position: absolute; top: 893px; left:1486px; font-size:13pt; "></div>
+<div id="ty14-2b" style="position: absolute; top: 893px; left:1506px; font-size:13pt; "></div>
+<div id="ty14-2c" style="position: absolute; top: 893px; left:1606px; font-size:13pt; color:#FF0000; "></div>
+<div id="ty14-3ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "ty14-3a" disabled / name="address" size="14" value=""　></div>
+<div id="ty14-3" style="position: absolute; top: 933px; left:1486px; font-size:13pt; "></div>
+<div id="ty14-3b" style="position: absolute; top: 933px; left:1506px; font-size:13pt; "></div>
+<div id="ty14-3c" style="position: absolute; top: 933px; left:1606px; font-size:13pt; color:#FF0000; "></div>
 
 <!綱島-大倉山>
 <div id="ty14-15d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "ty14-15" disabled / name="address" size="14" value=""　></div>
@@ -2222,6 +2226,9 @@ case '74':
 case '58':
 	des = "岡";
 	break;
+case '60':
+	des = "自";
+	break;
 case '75':
 	des = "梶";
 	break;
@@ -2749,6 +2756,40 @@ case ('980'):
 	doc2= document.getElementById("ty13-3");  
 	doc0= document.getElementById("ty13-3b");  
 	doc1= document.getElementById("ty13-3c");  
+	break ;
+	}
+	break ;
+
+case ('981'):
+	switch (trid){
+	case ('-1'):
+	nameText = document.getElementById('ty14-1a');
+	target = document.getElementById('ty14-1ad');
+	target.style.left = '1480px' ;
+	target.style.top = '830px' ;
+	doc2= document.getElementById("ty14-1");  
+	doc0= document.getElementById("ty14-1b");  
+	doc1= document.getElementById("ty14-1c");  
+	break ;
+
+	case ('1'):
+	nameText = document.getElementById('ty14-2a');
+	target = document.getElementById('ty14-2ad');
+	target.style.left = '1480px' ;
+	target.style.top = '890px' ;
+	doc2= document.getElementById("ty14-2");  
+	doc0= document.getElementById("ty14-2b");  
+	doc1= document.getElementById("ty14-2c");  
+	break ;
+
+	case ('2'):
+	nameText = document.getElementById('ty14-3a');
+	target = document.getElementById('ty14-3ad');
+	target.style.left = '1480px' ;
+	target.style.top = '930px' ;
+	doc2= document.getElementById("ty14-3");  
+	doc0= document.getElementById("ty14-3b");  
+	doc1= document.getElementById("ty14-3c");  
 	break ;
 	}
 	break ;
