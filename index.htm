@@ -1528,6 +1528,19 @@ case ('80'):
 	break ;
 
 case ('108'):
+	
+	if( sessionStorage.getItem('mizo2') == unban1){
+	target = document.getElementById('om10-11d');
+	target.style.left = '-110px' ;
+	target.style.top = '-100px' ;
+	doc2= document.getElementById("om10-11e");  
+	doc0= document.getElementById("om10-11b");  
+	doc1= document.getElementById("om10-11c");  
+	doc2.innerHTML= "";
+	doc0.innerHTML= "";
+	doc1.innerHTML= "";
+	}
+
 	nameText = document.getElementById('dt10-11');
 	target = document.getElementById('dt10-11d');
 	target.style.left = '960px' ;
@@ -3842,6 +3855,7 @@ case ('108'):
 	doc2= document.getElementById("om10-11e");  
 	doc0= document.getElementById("om10-11b");  
 	doc1= document.getElementById("om10-11c");  
+     	sessionStorage.setItem('mizo2', unban ) ;
 	} else {
 	doc2= document.getElementById("dt10-11e"); 
 	}
