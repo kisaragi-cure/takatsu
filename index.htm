@@ -826,6 +826,30 @@ background-color: #ffffff;
 <div id="dt18-2b" style="position: absolute; top: 2780px; left:1081px; font-size:12pt; "></div>
 <div id="dt18-2c" style="position: absolute; top: 2780px; left:1181px; font-size:12pt; color:#FF0000; "></div>
 
+<!江田-藤が丘>
+<div id="dt18-19d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "dt18-19" disabled / name="address" size="14" value=""　></div>
+<div id="dt18-19e" style="position: absolute; top: 2740px; left:1276px; font-size:12pt; "></div>
+<div id="dt18-19b" style="position: absolute; top: 2740px; left:1296px; font-size:12pt"></div>
+<div id="dt18-19c" style="position: absolute; top: 2740px; left:1396px; font-size:12pt; color:#FF0000;"></div>
+<div id="dt19-18d" style="position: absolute; top: -110px; left:-100px;"><input type="text"  id = "dt19-18" disabled / name="address" size="14" value=""　></div>
+<div id="dt19-18e" style="position: absolute; top: 2780px; left:1276px; font-size:12pt; "></div>
+<div id="dt19-18b" style="position: absolute; top: 2780px; left:1296px; font-size:12pt"></div>
+<div id="dt19-18c" style="position: absolute; top: 2780px; left:1396px; font-size:12pt; color:#FF0000;"></div>
+
+<div style="position: absolute; top: 2600px; left:1520px; font-size:18pt"><p>藤が丘</p></div>
+<div id="dt19-1ad" style="position: absolute; top:-100px; left:-100px;"><input type="text"  id = "dt19-1a" disabled / name="address" size="14" value=""　></div>
+<div id="dt19-1" style="position: absolute; top: 2740px; left:1486px; font-size:12pt; "></div>
+<div id="dt19-1b" style="position: absolute; top: 2740px; left:1506px; font-size:12pt; "></div>
+<div id="dt19-1c" style="position: absolute; top: 2740px; left:1606px; font-size:12pt; color:#FF0000; "></div>
+<div id="dt19-2ad" style="position: absolute; top:-110px; left:-100px;"><input type="text"  id = "dt19-2a" disabled / name="address" size="14" value=""　></div>
+<div id="dt19-2" style="position: absolute; top: 2780px; left:1486px; font-size:12pt; "></div>
+<div id="dt19-2b" style="position: absolute; top: 2780px; left:1506px; font-size:12pt; "></div>
+<div id="dt19-2c" style="position: absolute; top: 2780px; left:1606px; font-size:12pt; color:#FF0000; "></div>
+<div id="dt19-3ad" style="position: absolute; top:-100px; left:-100px;"><input type="text"  id = "dt19-3a" disabled / name="address" size="14" value=""　></div>
+<div id="dt19-3" style="position: absolute; top: 2820px; left:1486px; font-size:12pt; "></div>
+<div id="dt19-3b" style="position: absolute; top: 2820px; left:1506px; font-size:12pt; "></div>
+<div id="dt19-3c" style="position: absolute; top: 2820px; left:1606px; font-size:12pt; color:#FF0000; "></div>
+
 <!日吉-新綱島>
 <div id="sh03-02d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "sh03-02" disabled / name="address" size="14" value=""　></div>
 <div id="sh03-02e" style="position: absolute; top: 2200px; left:66px; font-size:12pt; "></div>
@@ -1719,6 +1743,42 @@ case ('958'):
 	}
 	break ;
 
+case ('959'):
+	switch (trid){
+	
+	case ('-1'):
+	nameText = document.getElementById('dt19-1a');
+	target = document.getElementById('dt19-1ad');
+	target.style.left = '1480px' ;
+	target.style.top = '2737px' ;
+	doc2= document.getElementById("dt19-1");  
+	doc0= document.getElementById("dt19-1b");  
+	doc1= document.getElementById("dt19-1c");  
+	break ;
+
+	case ('1'):
+	nameText = document.getElementById('dt19-2a');
+	target = document.getElementById('dt19-2ad');
+	target.style.left = '1480px' ;
+	target.style.top = '2777px' ;
+	doc2= document.getElementById("dt19-2");  
+	doc0= document.getElementById("dt19-2b");  
+	doc1= document.getElementById("dt19-2c");  
+	break ;
+
+	case ('2'):
+	nameText = document.getElementById('dt19-3a');
+	target = document.getElementById('dt19-3ad');
+	target.style.left = '1480px' ;
+	target.style.top = '2817px' ;
+	doc2= document.getElementById("dt19-3");  
+	doc0= document.getElementById("dt19-3b");  
+	doc1= document.getElementById("dt19-3c");  
+	break ;
+	
+	}
+	break ;
+
 default:
 	nameText = 0;
         break ;
@@ -2083,6 +2143,26 @@ case ('88'):
 	doc2= document.getElementById("dt18-17e");  
 	doc0= document.getElementById("dt18-17b");  
 	doc1= document.getElementById("dt18-17c");  
+	break ;
+
+case ('116'):
+	nameText = document.getElementById('dt18-19');
+	target = document.getElementById('dt18-19d');
+	target.style.left = '1270px' ;
+	target.style.top = '2737px' ;
+	doc2= document.getElementById("dt18-19e");  
+	doc0= document.getElementById("dt18-19b");  
+	doc1= document.getElementById("dt18-19c");  
+	break ;
+
+case ('89'):
+	nameText = document.getElementById('dt19-18');
+	target = document.getElementById('dt19-18d');
+	target.style.left = '1270px' ;
+	target.style.top = '2777px' ;
+	doc2= document.getElementById("dt19-18e");  
+	doc0= document.getElementById("dt19-18b");  
+	doc1= document.getElementById("dt19-18c");  
 	break ;
 }
 
