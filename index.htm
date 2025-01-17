@@ -1406,7 +1406,6 @@ if ( hensei < 70 ){
 	hensei = "22)" ;
 	}
 	break;
-	break;
 case 'null':
 	if ( hensei == null ){
 	sha = "　　" ;
@@ -1422,13 +1421,14 @@ default:
 	hensei = "　" ;
 	break;
 }
-
+if ( hensei == "" ){
 if ( sessionStorage.getItem( unban1 + 'car' + up) != null ) {
 if ( sessionStorage.getItem( unban1 + 'car' + up) == '　' ) {
 	hensei = '　' ;
 } else {
 	sha = '('
 	hensei = sessionStorage.getItem( unban1 + 'car' + up ) + ')' ;
+}
 }
 }
 
@@ -2721,6 +2721,7 @@ case '"渋谷"':
 	break ;
 
 default:
+	dataa[m] = "";
 if ( des2 == '45' ){
 	dataa[m] = "半";
 }
@@ -2728,8 +2729,10 @@ if ( des2 == '45' ){
 }
 }
 if ( unjo == 'null' || unjo == null ){
+if (  dataa[m] != "" ){
 localStorage.setItem( unban2 + 'dt'  , dataa[m] );
 localStorage.setItem( unban2 + 'dt'  + 'time' , now );
+}
 } else {
 document.getElementById('joho').value = '田都線運行情報あり/行先案内中止'
 document.getElementById('joho').style.color = '#ff0000';
