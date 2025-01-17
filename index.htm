@@ -48,7 +48,7 @@ background-color: #ffffff;
 
 
 <nobr>
-<p>大井田都エリア　[自動更新：15秒]　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　(C)Cure_kisaragi 2024 / Ver.2.00 </p>
+<p>大井田都エリア　[自動更新：15秒]　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　(C)Cure_kisaragi 2024 / Ver.2.20 </p>
 <br>
 <br>
 <br>
@@ -1109,10 +1109,10 @@ if ( unjo1 == 'null' || unjo1 == null ){
 }
 }, false);
 
-if ( localStorage.getItem( 'bajon' ) >= 186 ){
+if ( localStorage.getItem( 'bajon' ) >= 200 ){
 } else {
 localStorage.clear();
-localStorage.setItem( 'bajon', 187 );
+localStorage.setItem( 'bajon', 200 );
 }
 
 
@@ -1126,7 +1126,6 @@ request.onload = () => {
   if (request.readyState === request.DONE) {
     if (request.status === 200) {
 var data = JSON.parse(request.responseText);
-      console.log(data);
 
 
 //在線情報の処理
@@ -1148,15 +1147,19 @@ var data = JSON.parse(request.responseText);
       let delay = '';
       let line = '';
       let cars = '';
+      let up = '';
+      let up2 = '';
       let dai = 0;
       let n = 0;
       let q = 0;
+      let q1 = 0;
       let n1 = 0;
       let p = 5;
       let p1 = 250;
 
 let now = Math.floor(Date.now() / 60000) ;
 	var F  = {};
+	var Z  = {};
 
       len = JSON.stringify(data.trains.length) ;
       let nameText = document.getElementById('ty01-3a');
@@ -1210,6 +1213,7 @@ case 'null':
 
       unban = JSON.stringify(data.trains[n].operation_number) ;
       unban1 = JSON.stringify(data.trains[n].operation_number) ;
+      up = JSON.stringify(data.trains[n].up) ;
 
 	if ( localStorage.getItem( unban1 + 'dt' + 'time' ) != null ){
 	 if( localStorage.getItem( unban1 + 'dt' + 'time' ) -(- 90) <= now ){
@@ -1417,6 +1421,15 @@ default:
 	sha = "　　" ;
 	hensei = "　" ;
 	break;
+}
+
+if ( sessionStorage.getItem( unban1 + 'car' + up) != null ) {
+if ( sessionStorage.getItem( unban1 + 'car' + up) == '　' ) {
+	hensei = '　' ;
+} else {
+	sha = '('
+	hensei = sessionStorage.getItem( unban1 + 'car' + up ) + ')' ;
+}
 }
 
 switch (cars) {
@@ -2576,11 +2589,10 @@ case ('97'):
 	break ;
 }
 
-//ここから半蔵門線処理
-if ( des == '半' || des == '相') {
+//ここから半蔵門線処理+編成処理
+if ( des == '半' || hensei == '' ){
 F[q] = n;
 q ++ ;
-
 }
 
 
@@ -2661,8 +2673,6 @@ if (q > 0) {
 var unban2 = 0;
 var k = 0 ;
 var m = 0 ;
-console.log( F );
-      console.log( q );
 
 function demo() {
 sleepSetInterval(500, () => {
@@ -2670,12 +2680,10 @@ sleepSetInterval(500, () => {
 k = F[m] ;
 unban2 = JSON.stringify(data.trains[k].operation_number) ;
 des2 = JSON.stringify(data.trains[k].destination_station_code) ;
+up2 = JSON.stringify(data.trains[k].up) ;
 if ( unjo == 'null' || unjo == null ){
 requesta[m] = new XMLHttpRequest();
-if ( des2 == '45' ){
 requesta[m].open("GET", "https://timetable-api.tokyuapp.com/lines/26003/trains/" + unban2 + "/directions/up/kinds/" + kind3 + "/delays/0/sections/72", true);
-} else {
-}
 requesta[m].responseType = "text";
 requesta[m].onload = () => {
   if (requesta[m].readyState === requesta[m].DONE) {
@@ -2683,7 +2691,6 @@ requesta[m].onload = () => {
 dataa[m] = JSON.parse(requesta[m].responseText);
       unjo = JSON.stringify(dataa[m].delayReason) ;
       dataa[m] = JSON.stringify(dataa[m].destination) ;
-      console.log(  dataa[m] );
 	switch (dataa[m]) {
 case '"押上[スカイツリー前]"':
 	dataa[m] = "押";
@@ -2729,6 +2736,38 @@ document.getElementById('joho').style.color = '#ff0000';
 localStorage.removeItem( unban2 + 'dt'  );
 localStorage.removeItem( unban2 + 'dt'  );
 }
+
+
+var request5 = new XMLHttpRequest();
+if ( up2 == 'true') {
+request5.open("GET",  "https://train-info.tokyuapp.com/lines/26003/trains/" + unban2 + "/directions/up" );
+} else {
+request5.open("GET",  "https://train-info.tokyuapp.com/lines/26003/trains/" + unban2 + "/directions/down" );
+}
+request5.responseType = "text";
+
+request5.onload = () => {
+  if (request5.readyState === request.DONE) {
+    if (request5.status === 200) {
+var data5 = JSON.parse(request5.responseText);
+data5 = JSON.stringify(data5.unit_number).replaceAll('"','');
+data5 = data5.substr( 2,1) +  data5.substr( -2,2) ;
+data5 = 'K' + data5 ;
+console.log (data5);
+
+sessionStorage.setItem( unban2 + 'car' + up2  , data5 );
+
+  } else if (request5.status === 400) {
+sessionStorage.setItem( unban2 + 'car' + up2 , '　' );
+}
+ }
+};
+
+request5.send(null);
+
+
+
+
 m++ ;
     }
   }
@@ -2759,7 +2798,6 @@ request2.onload = () => {
   if (request2.readyState === request2.DONE) {
     if (request2.status === 200) {
 var data2 = JSON.parse(request2.responseText);
-      console.log(data2);
 
 //在線情報の処理
 let info = '';
