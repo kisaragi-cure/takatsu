@@ -1349,6 +1349,25 @@ case '"急"' :
 
 	break;
 case '""':
+
+	if ( line == 26003 ){
+	if ( hensei == 14 ){
+	sha = "(K50";
+	hensei = '1';
+}
+	if ( hensei > 60 ){
+if ( hensei < 70 ){
+	sha = "(Z10";
+	hensei = hensei - 60;
+} else {
+	sha = "(Z1";
+	hensei = hensei - 60;
+}
+	} 
+	}
+
+
+
 	if ( line == 26004 ){
 	if ( cars == '"5"' ){
 	sha = "(K9" ;
@@ -1360,7 +1379,7 @@ case '""':
 	} else {
 	sha = "" ;
 	}
-	} else {
+	} else if ( sha == '""' ) {
 	sha = "" ;
 	}
 	
@@ -1382,6 +1401,7 @@ case '""':
 	if ( sha == "(K6" && hensei == "02)" ){
 	hensei = "22)" ;
 	}
+	break;
 	break;
 case 'null':
 	if ( hensei == null ){
