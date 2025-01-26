@@ -38,6 +38,12 @@ background-color: #ffffff;
     padding: 7px;
     font-size: 18pt;
 }
+.asakusabutton{
+    width: 150px;
+    height: 2em;
+    padding: 7px;
+    font-size: 18pt;
+}
 
 </style>
 
@@ -48,7 +54,7 @@ background-color: #ffffff;
 
 
 <nobr>
-<p>大井田都エリア　[自動更新：15秒]　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　(C)Cure_kisaragi 2024 / Ver.2.20 </p>
+<p>大井田都エリア　[自動更新：15秒]　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　(C)Cure_kisaragi 2024 / Ver.2.21 </p>
 <br>
 <br>
 <br>
@@ -1075,9 +1081,11 @@ background-color: #ffffff;
 <div id="sh01-1c" style="position: absolute; top: 8310px; left:290px; font-size:12pt; color:#FF0000; "></div>
 
 
-<div style="position: absolute; top: 9000px; left:1050px; font-size:18pt"><p>　</p></div>
+<div style="position: absolute; top: 9000px; left:1085px; font-size:18pt"><p>　</p></div>
 
 <div style="position: absolute; top: 1750px; left:450px; font-size:24pt"><input type="button" id = "dento" value="東横目黒エリア" class="dentobutton"></div>
+
+<div style="position: absolute; top: 805px; left:450px; font-size:24pt"><input type="button" id = "asakusa" value="都営浅草線" class="asakusabutton"></div>
 
 </nobr>
 </font>
@@ -1091,6 +1099,10 @@ var unjo1 = null ;
 
 document.getElementById("dento").addEventListener("click", function () {
   location.href ="https://kisaragi-cure.github.io/okusawa/";
+}, false);
+
+document.getElementById("asakusa").addEventListener("click", function () {
+  location.href ="https://kisaragi-cure.github.io/ToeiAsakusa/";
 }, false);
 
 document.getElementById("joho").addEventListener("click", function () {
