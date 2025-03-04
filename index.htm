@@ -1444,6 +1444,19 @@ if ( sessionStorage.getItem( unban1 + 'car' + up) == '　' ) {
 }
 }
 
+//所属不一致判定
+if (hensei != '　'){
+        if (unban1 < 50){
+		if (hensei.substring(0,1) != 'K'){
+			dai = 1;
+		}
+	} else if (unban1 > 49){
+		if (hensei.substring(0,1) == 'K'){
+			dai = 1;
+		}
+	}
+}
+
 switch (cars) {
 	case '"6"' :
 	unban = '⑥' + unban ;
