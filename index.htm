@@ -1450,6 +1450,9 @@ if (hensei != '　'){
 		if (hensei.substring(0,1) != 'K'){
 			dai = 1;
 		}
+		if (hensei.substring(0,1) == ''){
+			dai = 0;
+		}
 	} else if (unban1 > 49){
 		if (hensei.substring(0,1) == 'K'){
 			dai = 1;
