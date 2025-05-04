@@ -1324,6 +1324,9 @@ unban = unban + "K" ;
 if ( unban == 180 ){
 unban = "80K" ;
 }
+if ( unban == 186 ){
+kind = "臨" ;
+}
 
 
       stid= JSON.stringify(data.trains[n].station_id) ;
@@ -2647,6 +2650,9 @@ switch (kind) {
 case '各' :
 doc2.style.color = '#0000ff'; //文字
 break;
+case '臨' :
+doc2.style.color = '#0000ff'; //文字
+break;
 case '急' :
 doc2.style.color = '#ff0000'; //文字
 break;
@@ -3647,6 +3653,9 @@ unban = unban + "K" ;
 if ( unban == 180 ){
 unban = "80K" ;
 }
+if ( unban == 186 ){
+kind = "臨" ;
+}
 
 
       stid= JSON.stringify(data3.trains[n].station_id) ;
@@ -3843,6 +3852,9 @@ doc0.style.backgroundColor = '#98fb98'; //背景
 
 switch (kind) {
 case '各' :
+doc2.style.color = '#0000ff'; //文字
+break;
+case '臨' :
 doc2.style.color = '#0000ff'; //文字
 break;
 case '急' :
