@@ -54,7 +54,7 @@ background-color: #ffffff;
 
 
 <nobr>
-<p>大井田都エリア　[自動更新：15秒]　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　(C)Cure_kisaragi 2024 / Ver.2.21 </p>
+<p>大井田都エリア　[自動更新：15秒]　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　(C)Cure_kisaragi 2025 / Ver.3.00 </p>
 <br>
 <br>
 <br>
@@ -1390,6 +1390,9 @@ if ( hensei < 70 ){
 	if ( line == 26004 ){
 	if ( cars == '"5"' ){
 	sha = "(K9" ;
+	if ( hensei > 50 ){
+	sha = "(K6" ;
+	}
 	if ( hensei > 20 ){
 	dai = 2 ;
 	}
@@ -2774,8 +2777,10 @@ localStorage.removeItem( unban2 + 'dt'  );
 localStorage.removeItem( unban2 + 'dt'  );
 }
 
+//編成情報
 
 var request5 = new XMLHttpRequest();
+if ( unjo == 'null' || unjo == null ){
 if ( up2 == 'true') {
 request5.open("GET",  "https://train-info.tokyuapp.com/lines/26003/trains/" + unban2 + "/directions/up" );
 } else {
@@ -2796,6 +2801,7 @@ sessionStorage.setItem( unban2 + 'car' + up2  , data5 );
 
   } else if (request5.status === 400) {
 sessionStorage.setItem( unban2 + 'car' + up2 , '　' );
+}
 }
  }
 };
@@ -4126,6 +4132,9 @@ case '"急"' :
 case '""':
 	if ( cars == '"5"' ){
 	sha = "(K9" ;
+	if ( hensei > 50 ){
+	sha = "(K6" ;
+	}
 	if ( hensei > 20 ){
 	dai = 2 ;
 	}
