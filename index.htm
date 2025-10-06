@@ -1302,6 +1302,10 @@ case '129':
 case '0':
 	des = "―";
 	break;
+case 'undefined':
+	des = "―";
+	break;
+
 }
       unban = JSON.stringify(data.trains[n].operation_number) ;
       sha= JSON.stringify(data.trains[n].affiliation) ;
@@ -2799,7 +2803,7 @@ console.log (data5);
 
 sessionStorage.setItem( unban2 + 'car' + up2  , data5 );
 data5 = '' ;
-  } else if (request5.status === 400) {
+  } else {
 sessionStorage.setItem( unban2 + 'car' + up2 , '　' );
 }
 }
