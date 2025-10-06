@@ -54,7 +54,7 @@ background-color: #ffffff;
 
 
 <nobr>
-<p>大井田都エリア　[自動更新：15秒]　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　(C)Cure_kisaragi 2025 / Ver.3.00 </p>
+<p>大井田都エリア　[自動更新：15秒]　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　(C)Cure_kisaragi 2025 / Ver.3.10 </p>
 <br>
 <br>
 <br>
@@ -64,7 +64,7 @@ background-color: #ffffff;
 <div id="time" style="position: absolute; top: 30px; left:10px; font-size:12pt; "></div>
 
 <div style="position: absolute; top: 7px; left:310px; font-size:30pt"><input type="button" id = "joho" value="田園都市線運行情報なし　　　　" ></div>
-<div style="position: absolute; top: 7px; left:560px; font-size:30pt"><input type="button" id = "joho1" value="大井町線運行情報準備中　　　　" ></div>
+<div style="position: absolute; top: 7px; left:560px; font-size:30pt"><input type="button" id = "joho1" value="大井町線運行情報なし　　　　" ></div>
 
 
 <div style="position: absolute; top: 140px; left:670px; font-size:18pt"><p>大井町</p></div>
@@ -1115,7 +1115,7 @@ if ( unjo == 'null' || unjo == null ){
 
 document.getElementById("joho1").addEventListener("click", function () {
 if ( unjo1 == 'null' || unjo1 == null ){
- alert( '大井町線運行情報準備中。' )
+ alert( '大井町線は平常通り運転しています。' )
 } else {
  alert( unjo1 )
 }
@@ -1219,7 +1219,7 @@ case '"回"':
 	break;
 case 'null':
 	kind = "　";
-	kind3 = "　";
+	kind3 = "普";
 	break;
 }
 
@@ -2627,7 +2627,7 @@ case ('97'):
 }
 
 //ここから半蔵門線処理+編成処理
-if ( des == '半' || hensei == '' ){
+if ( des == '半' || hensei == ''|| des == '―' ){
 F[q] = n;
 q ++ ;
 }
@@ -2730,6 +2730,7 @@ requesta[m].onload = () => {
     if (requesta[m].status === 200) {
 dataa[m] = JSON.parse(requesta[m].responseText);
       unjo = JSON.stringify(dataa[m].delayReason) ;
+	unjo = unjo.replaceAll('"','');
       dataa[m] = JSON.stringify(dataa[m].destination) ;
 	switch (dataa[m]) {
 case '"押上[スカイツリー前]"':
@@ -4978,7 +4979,31 @@ switch (cars) {
 }
 }
 
+
+
 }
+
+var request8 = new XMLHttpRequest();
+request8.open("GET", "https://timetable-api.tokyuapp.com/lines/26004/trains/151/directions/up/kinds/%E6%99%AE/delays/444/stations/971", true);
+request8.responseType = "text";
+request8.onload = () => {
+  if (request8.readyState === request8.DONE) {
+    if (request8.status === 200) {
+      var data8 = JSON.parse(request8.responseText);
+      	  unjo1 = JSON.stringify(data8.delayReason) ;
+	  unjo1 = unjo1.replaceAll('"','');
+
+if ( unjo1 == 'null' || unjo1 == null ){
+} else {
+document.getElementById('joho1').value = '大井町線運行情報あり　　　　'
+document.getElementById('joho1').style.color = '#ff0000';
+}
+
+	}
+	}
+	};
+request8.send(null);
+
 
 
 var YY = sessionStorage.getItem('Y');
