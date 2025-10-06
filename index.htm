@@ -4052,7 +4052,9 @@ case '0':
 
 
 //運番設定
-	if (unban < 200){
+	if (unban < 50){
+unban = "0" + unban + "K" ;
+} else if (unban < 200){
 
 } else if(unban < 210){
 unban = "0" + (unban - 200)  + "K" ;
